@@ -9,10 +9,10 @@ RUN apk update && apk add bash
 WORKDIR /app
 
 # Copy the fat jar into the container at /app
-COPY /target/docker-java-app-example.jar /app
+COPY /.jar /app.jar
 
 # Make port 8084 available to the world outside this container
 EXPOSE 8084
 
 # Run jar file when the container launches
-CMD ["java", "-jar", "docker-java-app-example.jar"]
+CMD ["java", "-jar", ".jar"]
